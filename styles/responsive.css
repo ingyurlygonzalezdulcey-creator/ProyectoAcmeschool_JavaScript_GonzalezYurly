@@ -1,0 +1,29 @@
+/* Adaptación para tabletas */
+@media (max-width: 900px) {
+    .inicio-opciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 20px;
+        text-align: center;
+    }
+    .navegacion {
+        padding: 15px;
+    }
+    .lista-navegacion {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .inicio {
+        padding: 30px 20px;
+    }
+    .inicio-opciones {
+        grid-template-columns: 1fr;
+    }
+    .inicio-contenido h2 {
+        font-size: 24px;
+    }
+}
