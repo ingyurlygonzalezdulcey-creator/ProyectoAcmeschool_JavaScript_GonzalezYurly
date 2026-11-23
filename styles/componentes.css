@@ -16,3 +16,24 @@
     font-size: 14px;
     color: #dbeafe;
 }
+/* Navegación de la aplicación */
+.navegacion {
+    background-color: #ffffff;
+    padding: 15px 40px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.lista-navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    list-style: none;
+}
+.lista-navegacion a {
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.lista-navegacion a:hover {
+    color: #3b82f6;
+}
