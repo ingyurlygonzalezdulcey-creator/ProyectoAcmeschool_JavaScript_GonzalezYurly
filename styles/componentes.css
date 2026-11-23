@@ -1,0 +1,18 @@
+/* Encabezado de la aplicación */
+.encabezado {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+.encabezado-contenido {
+    max-width: 1200px;
+    margin: auto;
+}
+.marca h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+.marca p {
+    font-size: 14px;
+    color: #dbeafe;
+}
