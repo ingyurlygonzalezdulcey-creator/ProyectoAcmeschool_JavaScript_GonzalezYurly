@@ -28,6 +28,9 @@ class InicioSesion extends HTMLElement {
                         <button type="submit">Ingresar</button>
                     </form>
                     <p id="mensaje-sesion"></p>
+                    <button type="button" id="boton-cerrar-sesion">
+                        Cerrar sesión
+                    </button>
                 </div>
             </section>
         `;
@@ -54,6 +57,13 @@ class InicioSesion extends HTMLElement {
                 mensaje.textContent = "Correo o contraseña incorrectos.";
                 mensaje.style.color = "red";
             }
+        });
+        // Evento para cerrar sesión
+        const botonCerrar = this.querySelector("#boton-cerrar-sesion");
+        botonCerrar.addEventListener("click", () => {
+            localStorage.removeItem("sesion");
+            mensaje.textContent = "Sesión cerrada correctamente.";
+            mensaje.style.color = "green";
         });
     }
 }

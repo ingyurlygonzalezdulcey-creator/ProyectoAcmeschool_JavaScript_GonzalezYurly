@@ -36,11 +36,16 @@ function iniciarSesion(usuario) {
 function obtenerSesion() {
     return JSON.parse(localStorage.getItem("sesion"));
 }
+// Cerrar sesión del usuario
+function cerrarSesion() {
+    localStorage.removeItem("sesion");
+}
 // Exportar funciones
 export {
     obtenerUsuarios,
     guardarUsuarios,
     crearAdministrador,
     iniciarSesion,
-    obtenerSesion
+    obtenerSesion,
+    cerrarSesion
 };
