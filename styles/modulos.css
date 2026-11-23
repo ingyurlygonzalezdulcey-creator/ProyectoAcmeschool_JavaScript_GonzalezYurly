@@ -1,0 +1,42 @@
+/* Página de inicio */
+.inicio {
+    padding: 50px 40px;
+}
+.inicio-contenido {
+    max-width: 1200px;
+    margin: auto;
+}
+.inicio-contenido h2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.inicio-contenido > p {
+    color: #64748b;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+.inicio-opciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.tarjeta-inicio {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.tarjeta-inicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.tarjeta-inicio h3 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+.tarjeta-inicio p {
+    color: #64748b;
+    line-height: 1.5;
+}
