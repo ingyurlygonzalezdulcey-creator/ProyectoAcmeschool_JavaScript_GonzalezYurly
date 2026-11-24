@@ -89,3 +89,113 @@
 #formulario-sesion button:hover {
     background-color: #3b82f6;
 }
+/* Gestión de usuarios */
+.gestion-usuarios {
+    padding: 40px;
+}
+.contenido-usuarios {
+    max-width: 1200px;
+    margin: auto;
+}
+.contenido-usuarios h2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+.contenido-usuarios > p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+/* Tarjeta del formulario */
+.tarjeta-usuarios {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 35px;
+}
+.tarjeta-usuarios h3,
+.tabla-usuarios h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+#formulario-usuarios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+#formulario-usuarios label {
+    color: #334155;
+    font-weight: bold;
+}
+#formulario-usuarios input,
+#formulario-usuarios select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+#formulario-usuarios input:focus,
+#formulario-usuarios select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+#formulario-usuarios button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#formulario-usuarios button:hover {
+    background-color: #3b82f6;
+    transform: translateY(-2px);
+}
+/* Tabla de usuarios */
+.tabla-usuarios {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+}
+.tabla-usuarios table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.tabla-usuarios th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 15px;
+}
+.tabla-usuarios td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+.tabla-usuarios tr:hover {
+    background-color: #f1f5f9;
+}
+/* Botón eliminar */
+.boton-eliminar {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-eliminar:hover {
+    background-color: #b91c1c;
+}

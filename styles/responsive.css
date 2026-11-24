@@ -27,3 +27,54 @@
         font-size: 24px;
     }
 }
+
+/* Adaptación del módulo de usuarios para tabletas */
+@media (max-width: 900px) {
+
+    .gestion-usuarios {
+        padding: 30px 20px;
+    }
+
+    .contenido-usuarios {
+        width: 100%;
+    }
+
+    .tarjeta-usuarios,
+    .tabla-usuarios {
+        padding: 20px;
+    }
+
+}
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    /* Formulario de usuarios */
+    .gestion-usuarios {
+        padding: 25px 15px;
+    }
+    .contenido-usuarios h2 {
+        font-size: 24px;
+    }
+    #formulario-usuarios {
+        grid-template-columns: 1fr;
+    }
+    #formulario-usuarios button {
+        grid-column: 1;
+    }
+    /* Tabla de usuarios */
+    .tabla-usuarios {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    .tabla-usuarios table {
+        min-width: 650px;
+    }
+    /* Navegación */
+    .lista-navegacion {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* Inicio de sesión */
+    .tarjeta-sesion {
+        padding: 20px;
+    }
+}

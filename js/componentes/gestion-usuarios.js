@@ -111,17 +111,45 @@ class GestionUsuarios extends HTMLElement {
         lista.innerHTML = "";
         usuarios.forEach((usuario) => {
             lista.innerHTML += `
-                <tr>
-                    <td>${usuario.identificacion}</td>
-                    <td>${usuario.nombre}</td>
-                    <td>${usuario.correo}</td>
-                    <td>${usuario.telefono}</td>
-                    <td>${usuario.rol}</td>
-                    <td>Registrado</td>
-                </tr>
-            `;
+            <tr>
+                <td>${usuario.identificacion}</td>
+                <td>${usuario.nombre}</td>
+                <td>${usuario.correo}</td>
+                <td>${usuario.telefono}</td>
+                <td>${usuario.rol}</td>
+                <td>
+                    <button
+                        type="button"
+                        class="boton-eliminar"
+                        data-identificacion="${usuario.identificacion}">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        `;
+        });
+        // Activar los botones para eliminar usuarios
+        const botonesEliminar = this.querySelectorAll(".boton-eliminar");
+        botonesEliminar.forEach((boton) => {
+            boton.addEventListener("click", () => {
+                const identificacion = boton.getAttribute("data-identificacion");
+                this.eliminarUsuario(identificacion);
+            });
         });
     }
-}
+    // Función para eliminar usuarios
+    eliminarUsuario(identificacion) {
+        let usuarios = obtenerUsuarios();
+        const confirmar = confirm("¿Deseas eliminar este usuario?");
+        if (confirmar) {
+            usuarios = usuarios.filter((usuario) => {
+                return usuario.identificacion !== identificacion;
+            });
+            guardarUsuarios(usuarios);
+            this.mostrarUsuarios();
+            alert("Usuario eliminado correctamente.");
+        }
+    }
+} // Cierre de la clase GestionUsuarios
 // Registrar componente
 customElements.define("gestion-usuarios", GestionUsuarios);
