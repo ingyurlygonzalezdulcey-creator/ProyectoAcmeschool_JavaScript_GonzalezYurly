@@ -70,6 +70,7 @@ class GestionUsuarios extends HTMLElement {
         formulario.addEventListener("submit", (evento) => {
             this.registrarUsuario(evento);
         });
+        this.mostrarUsuarios();
     }
     // Función para registrar usuarios
     registrarUsuario(evento) {
@@ -98,9 +99,28 @@ class GestionUsuarios extends HTMLElement {
             };
             usuarios.push(nuevoUsuario);
             guardarUsuarios(usuarios);
+            this.mostrarUsuarios();
             alert("Usuario registrado correctamente.");
             this.querySelector("#formulario-usuarios").reset();
         }
+    }
+    // Función para mostrar los usuarios registrados
+    mostrarUsuarios() {
+        const usuarios = obtenerUsuarios();
+        const lista = this.querySelector("#lista-usuarios");
+        lista.innerHTML = "";
+        usuarios.forEach((usuario) => {
+            lista.innerHTML += `
+                <tr>
+                    <td>${usuario.identificacion}</td>
+                    <td>${usuario.nombre}</td>
+                    <td>${usuario.correo}</td>
+                    <td>${usuario.telefono}</td>
+                    <td>${usuario.rol}</td>
+                    <td>Registrado</td>
+                </tr>
+            `;
+        });
     }
 }
 // Registrar componente
