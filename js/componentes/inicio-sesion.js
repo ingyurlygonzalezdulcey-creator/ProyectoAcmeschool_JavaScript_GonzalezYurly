@@ -39,6 +39,7 @@ class InicioSesion extends HTMLElement {
     configurarFormulario() {
         const formulario = this.querySelector("#formulario-sesion");
         const mensaje = this.querySelector("#mensaje-sesion");
+        const botonCerrar = this.querySelector("#boton-cerrar-sesion");
         formulario.addEventListener("submit", (evento) => {
             evento.preventDefault();
             const correo = this.querySelector("#correo").value;
@@ -50,18 +51,27 @@ class InicioSesion extends HTMLElement {
             });
             if (usuarioEncontrado) {
                 iniciarSesion(usuarioEncontrado);
+                window.dispatchEvent(new Event("sesion-actualizada"));
                 mensaje.textContent = "¡Bienvenido a Acme School!";
                 mensaje.style.color = "green";
-                console.log("Usuario autenticado:", usuarioEncontrado);
+                formulario.style.display = "none";
+                botonCerrar.style.display = "block";
             } else {
                 mensaje.textContent = "Correo o contraseña incorrectos.";
                 mensaje.style.color = "red";
             }
         });
         // Evento para cerrar sesión
-        const botonCerrar = this.querySelector("#boton-cerrar-sesion");
         botonCerrar.addEventListener("click", () => {
             localStorage.removeItem("sesion");
+            // Limpiar los campos del formulario
+            formulario.reset();
+            // Mostrar nuevamente el formulario
+            formulario.style.display = "flex";
+            // Ocultar el botón de cerrar sesión
+            botonCerrar.style.display = "none";
+            // Actualizar la navegación
+            window.dispatchEvent(new Event("sesion-actualizada"));
             mensaje.textContent = "Sesión cerrada correctamente.";
             mensaje.style.color = "green";
         });
