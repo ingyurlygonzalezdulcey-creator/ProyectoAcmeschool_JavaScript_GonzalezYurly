@@ -186,16 +186,286 @@
 .tabla-usuarios tr:hover {
     background-color: #f1f5f9;
 }
+/* Botones de acciones de usuarios */
+.boton-editar,
+.boton-eliminar {
+    color: #ffffff;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+/* Botón editar */
+.boton-editar {
+    background-color: #2563eb;
+}
+.boton-editar:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
 /* Botón eliminar */
 .boton-eliminar {
     background-color: #dc2626;
+}
+.boton-eliminar:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+/* Mensajes del inicio de sesión */
+#mensaje-sesion {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Botón cerrar sesión */
+#boton-cerrar-sesion {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#boton-cerrar-sesion:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+/* Gestión de exámenes */
+.gestion-examenes {
+    padding: 40px;
+}
+.contenido-examenes {
+    max-width: 1200px;
+    margin: auto;
+}
+.contenido-examenes h2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+.contenido-examenes > p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+/* Formulario de exámenes */
+.tarjeta-examenes {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 35px;
+}
+.tarjeta-examenes h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+#formulario-examenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+#formulario-examenes label {
+    color: #334155;
+    font-weight: bold;
+}
+#formulario-examenes input,
+#formulario-examenes textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+#formulario-examenes textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+#formulario-examenes button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#formulario-examenes button:hover {
+    background-color: #3b82f6;
+}
+/* Tabla de exámenes */
+.tabla-examenes {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+}
+.tabla-examenes h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+.tabla-examenes table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.tabla-examenes th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 15px;
+}
+.tabla-examenes td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+.tabla-examenes tr:hover {
+    background-color: #f1f5f9;
+}
+/* Botones de exámenes */
+.boton-editar-examen,
+.boton-eliminar-examen {
     color: #ffffff;
     border: none;
     padding: 9px 14px;
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.boton-editar-examen {
+    background-color: #2563eb;
+}
+.boton-editar-examen:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+.boton-eliminar-examen {
+    background-color: #dc2626;
+}
+.boton-eliminar-examen:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+/* Resolver exámenes */
+.resolver-examen {
+    padding: 40px;
+}
+.contenido-resolver {
+    max-width: 1000px;
+    margin: auto;
+}
+.contenido-resolver h2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.contenido-resolver > p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/* Tarjeta de examen */
+.tarjeta-resolver {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+.tarjeta-resolver h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+/* Información del examen */
+.informacion-examen {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: #eff6ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.informacion-examen p {
+    color: #1e40af;
+    font-weight: bold;
+}
+/* Preguntas */
+.pregunta-examen {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+.pregunta-examen h4 {
+    color: #334155;
+    margin-bottom: 15px;
+}
+.respuestas-examen {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.respuestas-examen label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #475569;
+    cursor: pointer;
+}
+.respuestas-examen input {
+    accent-color: #1e3a8a;
+}
+/* Temporizador */
+.temporizador-examen {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+/* Botón finalizar */
+.boton-finalizar {
+    width: 100%;
+    padding: 14px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
-.boton-eliminar:hover {
-    background-color: #b91c1c;
+.boton-finalizar:hover {
+    background-color: #3b82f6;
 }
+/* Resultado del examen */
+.resultado-examen {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+.resultado-examen h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+

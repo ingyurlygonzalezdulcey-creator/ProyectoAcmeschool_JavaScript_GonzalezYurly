@@ -37,3 +37,47 @@
 .lista-navegacion a:hover {
     color: #3b82f6;
 }
+/* Transiciones generales */
+button,
+input,
+select,
+textarea,
+a {
+    transition: all 0.3s ease;
+}
+/* Efecto de las tarjetas */
+.tarjeta-inicio,
+.tarjeta-sesion,
+.tarjeta-usuarios,
+.tarjeta-examenes,
+.tarjeta-resolver {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efecto de los campos */
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #93c5fd;
+}
+/* Efecto de los enlaces */
+.lista-navegacion a {
+    transition: color 0.3s ease;
+}
+/* Animación de aparición */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.inicio,
+.contenedor-sesion,
+.gestion-usuarios,
+.gestion-examenes,
+.resolver-examen {
+    animation: aparecer 0.5s ease;
+}

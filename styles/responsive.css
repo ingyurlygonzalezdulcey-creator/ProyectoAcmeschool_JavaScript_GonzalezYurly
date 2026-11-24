@@ -78,3 +78,79 @@
         padding: 20px;
     }
 }
+/* Adaptación del módulo de exámenes para tabletas */
+@media (max-width: 900px) {
+    .gestion-examenes {
+        padding: 30px 20px;
+    }
+    .contenido-examenes {
+        width: 100%;
+    }
+    .tarjeta-examenes,
+    .tabla-examenes {
+        padding: 20px;
+    }
+}
+/* Adaptación del módulo de exámenes para celulares */
+@media (max-width: 600px) {
+    .gestion-examenes {
+        padding: 25px 15px;
+    }
+    .contenido-examenes h2 {
+        font-size: 24px;
+    }
+    #formulario-examenes {
+        grid-template-columns: 1fr;
+    }
+    #formulario-examenes button {
+        grid-column: 1;
+    }
+    .tabla-examenes {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    .tabla-examenes table {
+        min-width: 650px;
+    }
+}
+/* Adaptación de resolver exámenes para tabletas */
+@media (max-width: 900px) {
+    .resolver-examen {
+        padding: 30px 20px;
+    }
+    .contenido-resolver {
+        width: 100%;
+    }
+    .tarjeta-resolver {
+        padding: 25px;
+    }
+}
+/* Adaptación de resolver exámenes para celulares */
+@media (max-width: 600px) {
+    .resolver-examen {
+        padding: 25px 15px;
+    }
+    .contenido-resolver h2 {
+        font-size: 24px;
+    }
+    .tarjeta-resolver {
+        padding: 18px;
+    }
+    .informacion-examen {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .pregunta-examen {
+        padding: 15px;
+    }
+    .temporizador-examen {
+        font-size: 18px;
+    }
+    .boton-finalizar {
+        padding: 12px;
+    }
+    .resultado-examen {
+        padding: 20px;
+    }
+}
+
