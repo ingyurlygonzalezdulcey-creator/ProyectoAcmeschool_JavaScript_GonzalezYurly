@@ -54,6 +54,7 @@ Desarrollar una plataforma funcional, intuitiva, responsive y accesible, aplican
 - Registro de calificaciones.
 - Almacenamiento de las respuestas seleccionadas.
 - Visualización del estado de aprobación o reprobación.
+- Eliminación de resultados registrados.
 
 ## Tecnologías utilizadas
 
@@ -144,6 +145,12 @@ Estas credenciales corresponden al administrador inicial de la aplicación acad�
 ## Repositorio
 
 [Proyecto Acme School - GitHub](https://github.com/ingyurlygonzalezdulcey-creator/ProyectoAcmeschool_JavaScript_GonzalezYurly)
+
+## Aplicación publicada
+
+El proyecto se encuentra disponible mediante GitHub Pages:
+
+[Acceder a Acme School](https://ingyurlygonzalezdulcey-creator.github.io/ProyectoAcmeschool_JavaScript_GonzalezYurly/)
 
 ## Autora
 

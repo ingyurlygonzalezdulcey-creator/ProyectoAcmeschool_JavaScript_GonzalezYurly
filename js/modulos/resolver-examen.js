@@ -194,7 +194,7 @@ class ResolverExamen extends HTMLElement {
                                 <h3>Pregunta ${indice + 1}</h3>
                                 <p>${pregunta.enunciado}</p>
                                 ${pregunta.respuestas.map(
-                                    (respuesta, posicion) => `
+            (respuesta, posicion) => `
                                         <label>
                                             <input
                                                 type="radio"
@@ -204,7 +204,7 @@ class ResolverExamen extends HTMLElement {
                                             ${respuesta}
                                         </label>
                                     `
-                                ).join("")}
+        ).join("")}
                             </div>
                         `).join("")}
                         <button type="submit">
@@ -286,12 +286,12 @@ class ResolverExamen extends HTMLElement {
             });
         });
         const totalPreguntas = preguntas.length;
-        const porcentaje = Math.round(
-            (respuestasCorrectas / totalPreguntas) * 100
+        // Calcular el porcentaje de respuestas correctas
+        const porcentaje = Number(
+            ((respuestasCorrectas / totalPreguntas) * 100).toFixed(2)
         );
-        const aprobado =
-            (respuestasCorrectas / totalPreguntas) * 100
-            >= this.examenActual.porcentaje;
+        // Verificar si el estudiante aprobó
+        const aprobado = porcentaje >= this.examenActual.porcentaje;
         // Crear objeto con los datos del resultado
         const resultado = {
             identificacion: this.estudiante.identificacion,
@@ -345,8 +345,8 @@ class ResolverExamen extends HTMLElement {
                     </h3>
                     <h2 class="${aprobado ? "estado-aprobado" : "estado-reprobado"}">
                         ${aprobado
-                            ? "¡Examen aprobado!"
-                            : "Examen reprobado"}
+                ? "¡Examen aprobado!"
+                : "Examen reprobado"}
                     </h2>
                     <button
                         type="button"

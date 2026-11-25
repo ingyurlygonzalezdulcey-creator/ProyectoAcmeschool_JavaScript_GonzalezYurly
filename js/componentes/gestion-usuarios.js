@@ -148,6 +148,15 @@ class GestionUsuarios extends HTMLElement {
         const telefono = this.querySelector("#telefono").value;
         const rol = this.querySelector("#rol").value;
         const contrasena = this.querySelector("#contrasena-usuario").value;
+        // Verificar que el correo no pertenezca a otro usuario
+        const correoExiste = usuarios.find((usuario) => {
+            return usuario.correo === correo &&
+                usuario.identificacion !== identificacion;
+        });
+        if (correoExiste) {
+            alert("El correo ya está registrado por otro usuario.");
+            return;
+        }
         usuarios = usuarios.map((usuario) => {
             if (usuario.identificacion === identificacion) {
                 return {
@@ -218,6 +227,11 @@ class GestionUsuarios extends HTMLElement {
     }
     // Función para eliminar usuarios
     eliminarUsuario(identificacion) {
+        // Proteger al administrador principal
+        if (identificacion === "1001") {
+            alert("No se puede eliminar el administrador principal.");
+            return;
+        }
         let usuarios = obtenerUsuarios();
         const confirmar = confirm("¿Deseas eliminar este usuario?");
         if (confirmar) {

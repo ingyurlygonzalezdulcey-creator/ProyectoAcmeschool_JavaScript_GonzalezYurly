@@ -8,12 +8,10 @@ function guardarResultados(resultados) {
     localStorage.setItem("resultados", JSON.stringify(resultados));
 }
 // Registrar un nuevo resultado
-// Registrar un nuevo resultado
 function registrarResultado(resultado) {
     const resultados = obtenerResultados();
     resultados.push(resultado);
     guardarResultados(resultados);
-    console.log("Resultado guardado:", resultado);
 }
 // Exportar funciones
 export {
