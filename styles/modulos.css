@@ -893,3 +893,17 @@
         transform: none;
     }
 }
+/* Botón para eliminar resultados */
+.boton-eliminar-resultado {
+    background-color: #dc2626;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-eliminar-resultado:hover {
+    background-color: #b91c1c;
+}

@@ -1,6 +1,9 @@
 // Componente para gestionar los resultados de los exámenes
 import { obtenerSesion } from "../servicios/usuarios.js";
-import { obtenerResultados } from "../servicios/resultados.js";
+import {
+    obtenerResultados,
+    guardarResultados
+} from "../servicios/resultados.js";
 class GestionResultados extends HTMLElement {
     connectedCallback() {
         this.actualizarVista();
@@ -20,7 +23,7 @@ class GestionResultados extends HTMLElement {
                 <div class="contenido-resultados">
                     <h2>Gestión de resultados</h2>
                     <p>
-                        Consulta los resultados de los estudiantes
+                        Consulta y administra los resultados de los estudiantes
                         que han presentado exámenes.
                     </p>
                     <div class="tarjeta-resultados">
@@ -40,6 +43,7 @@ class GestionResultados extends HTMLElement {
                                         <th>Respuestas correctas</th>
                                         <th>Porcentaje</th>
                                         <th>Estado</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="lista-resultados">
@@ -64,14 +68,14 @@ class GestionResultados extends HTMLElement {
         if (resultados.length === 0) {
             lista.innerHTML = `
                 <tr>
-                    <td colspan="8">
+                    <td colspan="9">
                         No hay resultados registrados.
                     </td>
                 </tr>
             `;
             return;
         }
-        resultados.forEach((resultado) => {
+        resultados.forEach((resultado, indice) => {
             const fila = document.createElement("tr");
             const datos = [
                 resultado.identificacion,
@@ -88,8 +92,39 @@ class GestionResultados extends HTMLElement {
                 celda.textContent = dato;
                 fila.appendChild(celda);
             });
+            // Crear celda de acciones
+            const celdaAcciones = document.createElement("td");
+            // Crear botón para eliminar resultado
+            const botonEliminar = document.createElement("button");
+            botonEliminar.type = "button";
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.classList.add("boton-eliminar-resultado");
+            botonEliminar.addEventListener("click", () => {
+                this.eliminarResultado(indice);
+            });
+            celdaAcciones.appendChild(botonEliminar);
+            fila.appendChild(celdaAcciones);
             lista.appendChild(fila);
         });
+    }
+    // Eliminar un resultado almacenado
+    eliminarResultado(indice) {
+        if (!obtenerSesion()) {
+            return;
+        }
+        const confirmar = confirm(
+            "¿Estás seguro de eliminar este resultado?"
+        );
+        if (!confirmar) {
+            return;
+        }
+        const resultados = obtenerResultados();
+        // Eliminar únicamente el resultado seleccionado
+        resultados.splice(indice, 1);
+        // Actualizar LocalStorage
+        guardarResultados(resultados);
+        // Actualizar tabla de resultados
+        this.mostrarResultados();
     }
 }
 // Registrar componente

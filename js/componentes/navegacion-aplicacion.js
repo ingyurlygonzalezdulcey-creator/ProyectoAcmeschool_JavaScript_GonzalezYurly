@@ -8,9 +8,18 @@ class NavegacionAplicacion extends HTMLElement {
         this.actualizarNavegacion();
         window.addEventListener("sesion-actualizada", () => {
             this.actualizarNavegacion();
-            this.mostrarVista("inicio");
+            this.mostrarVistaInicial();
         });
-        this.mostrarVista("inicio");
+        this.mostrarVistaInicial();
+    }
+    // Mostrar la vista inicial según la sesión
+    mostrarVistaInicial() {
+        const sesion = obtenerSesion();
+        if (sesion) {
+            this.mostrarVista("inicio");
+        } else {
+            this.mostrarVista("sesion");
+        }
     }
     // Actualizar menú según la sesión
     actualizarNavegacion() {
@@ -60,6 +69,13 @@ class NavegacionAplicacion extends HTMLElement {
         if (botonCerrar) {
             botonCerrar.addEventListener("click", (evento) => {
                 evento.preventDefault();
+                // Evitar cerrar sesión durante un examen
+                const resolver = document.querySelector("resolver-examen");
+                if (resolver && resolver.querySelector("#formulario-respuestas")
+                    && !resolver.examenFinalizado) {
+                    alert("Debes terminar el examen antes de cerrar sesión.");
+                    return;
+                }
                 cerrarSesion();
                 window.dispatchEvent(
                     new Event("sesion-actualizada")
@@ -89,7 +105,7 @@ class NavegacionAplicacion extends HTMLElement {
         };
         // Proteger los módulos privados
         if (!sesion && ["usuarios", "examenes", "resultados"].includes(vista)) {
-            vista = "inicio";
+            vista = "sesion";
         }
         // Evitar mostrar el formulario si existe una sesión
         if (sesion && vista === "sesion") {
@@ -118,6 +134,12 @@ class NavegacionAplicacion extends HTMLElement {
                 "activo",
                 enlace.dataset.vista === vista
             );
+            // Identificar la vista activa para accesibilidad
+            if (enlace.dataset.vista === vista) {
+                enlace.setAttribute("aria-current", "page");
+            } else {
+                enlace.removeAttribute("aria-current");
+            }
         });
     }
 }
