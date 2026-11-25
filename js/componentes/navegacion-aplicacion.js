@@ -69,6 +69,15 @@ class NavegacionAplicacion extends HTMLElement {
     }
     // Mostrar únicamente el módulo seleccionado
     mostrarVista(vista) {
+        // Evitar cambiar de vista durante un examen
+        const resolver = document.querySelector("resolver-examen");
+        if (resolver && resolver.querySelector("#formulario-respuestas")
+            && !resolver.examenFinalizado) {
+            if (vista !== "resolver") {
+                alert("Debes terminar el examen antes de cambiar de módulo.");
+            }
+            return;
+        }
         const sesion = obtenerSesion();
         const vistas = {
             inicio: "inicio-aplicacion",
@@ -97,6 +106,10 @@ class NavegacionAplicacion extends HTMLElement {
         const componente = document.querySelector(vistas[vista]);
         if (componente) {
             componente.style.display = "block";
+            // Actualizar los exámenes disponibles
+            if (vista === "resolver") {
+                componente.mostrarExamenes();
+            }
         }
         // Marcar el enlace seleccionado
         const enlaces = this.querySelectorAll("[data-vista]");
