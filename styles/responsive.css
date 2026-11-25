@@ -1,156 +1,181 @@
 /* Adaptación para tabletas */
 @media (max-width: 900px) {
+    /* Inicio de la aplicación */
     .inicio-opciones {
         grid-template-columns: repeat(2, 1fr);
+    }
+    /* Módulos de la aplicación */
+    .gestion-usuarios,
+    .gestion-examenes,
+    .gestion-resultados,
+    .resolver-examen {
+        padding: 30px 20px;
+    }
+    .contenido-usuarios,
+    .contenido-examenes,
+    .contenido-resultados,
+    .contenido-resolver {
+        width: 100%;
+        min-width: 0;
+    }
+    /* Tarjetas y tablas */
+    .tarjeta-usuarios,
+    .tabla-usuarios,
+    .tarjeta-examenes,
+    .tabla-examenes,
+    .tarjeta-preguntas,
+    .lista-preguntas,
+    .tarjeta-examen-disponible {
+        padding: 20px;
+    }
+    /* Desplazamiento horizontal de tablas */
+    .tabla-usuarios,
+    .tabla-examenes,
+    .tabla-contenedor {
+        overflow-x: auto;
     }
 }
 /* Adaptación para celulares */
 @media (max-width: 600px) {
+    /* Encabezado */
     .encabezado {
-        padding: 20px;
+        padding: 20px 15px;
         text-align: center;
     }
+    .marca h1 {
+        font-size: 24px;
+    }
+    .marca p {
+        font-size: 14px;
+    }
+    /* Navegación */
     .navegacion {
         padding: 15px;
     }
     .lista-navegacion {
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
+        gap: 12px;
     }
+    .lista-navegacion a {
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+    }
+    /* Inicio de la aplicación */
     .inicio {
-        padding: 30px 20px;
+        padding: 30px 15px;
     }
     .inicio-opciones {
         grid-template-columns: 1fr;
     }
-    .inicio-contenido h2 {
+    /* Títulos de los módulos */
+    .inicio-contenido h2,
+    .contenido-usuarios h2,
+    .contenido-examenes h2,
+    .contenido-resultados h2,
+    .contenido-resolver h2 {
         font-size: 24px;
-    }
-}
-
-/* Adaptación del módulo de usuarios para tabletas */
-@media (max-width: 900px) {
-
-    .gestion-usuarios {
-        padding: 30px 20px;
-    }
-
-    .contenido-usuarios {
-        width: 100%;
-    }
-
-    .tarjeta-usuarios,
-    .tabla-usuarios {
-        padding: 20px;
-    }
-
-}
-/* Adaptación para celulares */
-@media (max-width: 600px) {
-    /* Formulario de usuarios */
-    .gestion-usuarios {
-        padding: 25px 15px;
-    }
-    .contenido-usuarios h2 {
-        font-size: 24px;
-    }
-    #formulario-usuarios {
-        grid-template-columns: 1fr;
-    }
-    #formulario-usuarios button {
-        grid-column: 1;
-    }
-    /* Tabla de usuarios */
-    .tabla-usuarios {
-        padding: 15px;
-        overflow-x: auto;
-    }
-    .tabla-usuarios table {
-        min-width: 650px;
-    }
-    /* Navegación */
-    .lista-navegacion {
-        flex-wrap: wrap;
-        justify-content: center;
     }
     /* Inicio de sesión */
     .tarjeta-sesion {
         padding: 20px;
     }
-}
-/* Adaptación del módulo de exámenes para tabletas */
-@media (max-width: 900px) {
-    .gestion-examenes {
-        padding: 30px 20px;
-    }
-    .contenido-examenes {
-        width: 100%;
-    }
-    .tarjeta-examenes,
-    .tabla-examenes {
-        padding: 20px;
-    }
-}
-/* Adaptación del módulo de exámenes para celulares */
-@media (max-width: 600px) {
-    .gestion-examenes {
+    /* Espaciado de los módulos */
+    .gestion-usuarios,
+    .gestion-examenes,
+    .gestion-resultados,
+    .resolver-examen {
         padding: 25px 15px;
     }
-    .contenido-examenes h2 {
-        font-size: 24px;
-    }
+    /* Formularios */
+    #formulario-usuarios,
     #formulario-examenes {
         grid-template-columns: 1fr;
     }
+    #formulario-usuarios button,
     #formulario-examenes button {
         grid-column: 1;
     }
-    .tabla-examenes {
+    #formulario-estudiante {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Campos de los formularios */
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    /* Tarjetas */
+    .tarjeta-usuarios,
+    .tarjeta-examenes,
+    .tarjeta-preguntas,
+    .lista-preguntas {
+        padding: 15px;
+    }
+    /* Tablas */
+    .tabla-usuarios,
+    .tabla-examenes,
+    .tabla-contenedor {
         padding: 15px;
         overflow-x: auto;
     }
-    .tabla-examenes table {
+    .tabla-usuarios table,
+    .tabla-examenes table,
+    .tabla-contenedor table {
         min-width: 650px;
     }
-}
-/* Adaptación de resolver exámenes para tabletas */
-@media (max-width: 900px) {
-    .resolver-examen {
-        padding: 30px 20px;
+    /* Lista de exámenes disponibles */
+    .lista-examenes-disponibles {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
-    .contenido-resolver {
-        width: 100%;
-    }
-    .tarjeta-resolver {
-        padding: 25px;
-    }
-}
-/* Adaptación de resolver exámenes para celulares */
-@media (max-width: 600px) {
-    .resolver-examen {
-        padding: 25px 15px;
-    }
-    .contenido-resolver h2 {
-        font-size: 24px;
-    }
-    .tarjeta-resolver {
-        padding: 18px;
-    }
-    .informacion-examen {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .pregunta-examen {
-        padding: 15px;
-    }
-    .temporizador-examen {
-        font-size: 18px;
-    }
-    .boton-finalizar {
-        padding: 12px;
-    }
-    .resultado-examen {
+    .tarjeta-examen-disponible {
         padding: 20px;
     }
+    .tarjeta-examen-disponible h3 {
+        font-size: 20px;
+    }
+    .boton-seleccionar-examen {
+        width: 100%;
+    }
+    /* Preguntas del examen */
+    .pregunta-estudiante {
+        padding: 15px;
+        overflow-wrap: anywhere;
+    }
+    .pregunta-estudiante h3 {
+        font-size: 18px;
+    }
+    .pregunta-estudiante label {
+        padding: 12px;
+        font-size: 15px;
+    }
+    /* Preguntas registradas */
+    .pregunta-registrada {
+        padding: 15px;
+        overflow-wrap: anywhere;
+    }
+    /* Temporizador */
+    #tiempo-examen {
+        font-size: 18px;
+        padding: 12px;
+        text-align: center;
+    }
+    /* Botón para finalizar el examen */
+    #formulario-respuestas button {
+        width: 100%;
+        padding: 12px;
+    }
+    /* Resultado del examen */
+    .resultado-examen {
+        padding: 20px 15px;
+    }
+    #boton-volver-examenes {
+        width: 100%;
+    }
 }
-
