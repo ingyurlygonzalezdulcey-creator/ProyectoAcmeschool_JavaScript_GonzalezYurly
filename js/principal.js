@@ -5,6 +5,10 @@ import "./componentes/inicio-aplicacion.js";
 import "./componentes/inicio-sesion.js";
 import { crearAdministrador } from "./servicios/usuarios.js";
 import "./componentes/gestion-usuarios.js";
+import "./componentes/gestion-examenes.js";
+import "./componentes/gestion-resultados.js";
+import "./modulos/resolver-examen.js";
+
 
 // Crear administrador inicial
 crearAdministrador();

@@ -1,10 +1,23 @@
 // Componente de inicio de sesión
 import {
     obtenerUsuarios,
-    iniciarSesion
+    iniciarSesion,
+    obtenerSesion
 } from "../servicios/usuarios.js";
 class InicioSesion extends HTMLElement {
     connectedCallback() {
+        this.actualizarVista();
+        window.addEventListener("sesion-actualizada", () => {
+            this.actualizarVista();
+        });
+    }
+    // Mostrar formulario únicamente si no existe una sesión
+    actualizarVista() {
+        const sesion = obtenerSesion();
+        if (sesion) {
+            this.innerHTML = "";
+            return;
+        }
         this.innerHTML = `
             <section class="contenedor-sesion">
                 <div class="tarjeta-sesion">
@@ -16,6 +29,7 @@ class InicioSesion extends HTMLElement {
                             type="email"
                             id="correo"
                             placeholder="Ingresa tu correo"
+                            autocomplete="username"
                             required
                         >
                         <label for="contrasena">Contraseña</label>
@@ -23,26 +37,24 @@ class InicioSesion extends HTMLElement {
                             type="password"
                             id="contrasena"
                             placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
                             required
                         >
                         <button type="submit">Ingresar</button>
                     </form>
                     <p id="mensaje-sesion"></p>
-                    <button type="button" id="boton-cerrar-sesion">
-                        Cerrar sesión
-                    </button>
                 </div>
             </section>
         `;
         this.configurarFormulario();
     }
+    // Validar los datos del usuario
     configurarFormulario() {
         const formulario = this.querySelector("#formulario-sesion");
         const mensaje = this.querySelector("#mensaje-sesion");
-        const botonCerrar = this.querySelector("#boton-cerrar-sesion");
         formulario.addEventListener("submit", (evento) => {
             evento.preventDefault();
-            const correo = this.querySelector("#correo").value;
+            const correo = this.querySelector("#correo").value.trim();
             const contrasena = this.querySelector("#contrasena").value;
             const usuarios = obtenerUsuarios();
             const usuarioEncontrado = usuarios.find((usuario) => {
@@ -51,29 +63,12 @@ class InicioSesion extends HTMLElement {
             });
             if (usuarioEncontrado) {
                 iniciarSesion(usuarioEncontrado);
+                // Actualizar los componentes de la aplicación
                 window.dispatchEvent(new Event("sesion-actualizada"));
-                mensaje.textContent = "¡Bienvenido a Acme School!";
-                mensaje.style.color = "green";
-                formulario.style.display = "none";
-                botonCerrar.style.display = "block";
             } else {
                 mensaje.textContent = "Correo o contraseña incorrectos.";
                 mensaje.style.color = "red";
             }
-        });
-        // Evento para cerrar sesión
-        botonCerrar.addEventListener("click", () => {
-            localStorage.removeItem("sesion");
-            // Limpiar los campos del formulario
-            formulario.reset();
-            // Mostrar nuevamente el formulario
-            formulario.style.display = "flex";
-            // Ocultar el botón de cerrar sesión
-            botonCerrar.style.display = "none";
-            // Actualizar la navegación
-            window.dispatchEvent(new Event("sesion-actualizada"));
-            mensaje.textContent = "Sesión cerrada correctamente.";
-            mensaje.style.color = "green";
         });
     }
 }

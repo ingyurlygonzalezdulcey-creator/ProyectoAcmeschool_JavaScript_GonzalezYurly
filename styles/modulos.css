@@ -468,4 +468,361 @@
     color: #1e3a8a;
     margin-bottom: 15px;
 }
+/* Módulo de gestión de resultados */
 
+.gestion-resultados {
+    padding: 40px 20px;
+    background-color: #f1f5f9;
+}
+
+.contenido-resultados {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contenido-resultados h2 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.contenido-resultados p {
+    margin-bottom: 20px;
+}
+
+.tarjeta-resultados {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.tarjeta-resultados h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+/* Botón de actualización */
+
+#actualizar-resultados {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+#actualizar-resultados:hover {
+    background-color: #2563eb;
+}
+/* Tabla de resultados */
+.gestion-resultados .tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+.gestion-resultados table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.gestion-resultados th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+}
+.gestion-resultados td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.gestion-resultados tbody tr:hover {
+    background-color: #eff6ff;
+}
+/* Módulo para presentar exámenes */
+
+.resolver-examen {
+    padding: 40px 20px;
+    background-color: #f1f5f9;
+}
+
+.contenido-resolver {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contenido-resolver h2 {
+    color: #1e3a8a;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contenido-resolver > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+/* Formulario del estudiante */
+#formulario-estudiante {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 550px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+#formulario-estudiante label {
+    color: #1e293b;
+    font-weight: 600;
+}
+#formulario-estudiante input,
+#formulario-estudiante select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.3s;
+}
+#formulario-estudiante input:focus,
+#formulario-estudiante select:focus {
+    outline: 2px solid #2563eb;
+    border-color: #2563eb;
+}
+/* Botón para comenzar el examen */
+#formulario-estudiante button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#formulario-estudiante button:hover {
+    background-color: #2563eb;
+}
+/* Presentación de las preguntas */
+.pregunta-estudiante {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+.pregunta-estudiante h3 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+.pregunta-estudiante p {
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+/* Opciones de respuesta */
+.pregunta-estudiante label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pregunta-estudiante label:hover {
+    background-color: #eff6ff;
+}
+.pregunta-estudiante input[type="radio"] {
+    accent-color: #1e3a8a;
+    width: 18px;
+    height: 18px;
+}
+.pregunta-estudiante label:has(input:checked) {
+    background-color: #dbeafe;
+    border-color: #2563eb;
+}
+/* Temporizador del examen */
+#tiempo-examen {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+}
+/* Botón para finalizar el examen */
+#formulario-respuestas button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#formulario-respuestas button:hover {
+    background-color: #2563eb;
+}
+/* Pantalla de resultados */
+.resultado-examen {
+    padding: 40px 20px;
+    background-color: #f1f5f9;
+}
+.resultado-examen .contenido-resolver {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.resultado-examen p {
+    margin-bottom: 15px;
+}
+.resultado-examen h3 {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin: 25px 0;
+}
+/* Botón para volver a los exámenes */
+#boton-volver-examenes {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+#boton-volver-examenes:hover {
+    background-color: #2563eb;
+}
+/* Formulario administrativo de preguntas */
+
+.tarjeta-preguntas {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-preguntas h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.tarjeta-preguntas label {
+    color: #1e293b;
+    font-weight: 600;
+}
+.tarjeta-preguntas input,
+.tarjeta-preguntas select,
+.tarjeta-preguntas textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.3s;
+}
+.tarjeta-preguntas textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+.tarjeta-preguntas input:focus,
+.tarjeta-preguntas select:focus,
+.tarjeta-preguntas textarea:focus {
+    outline: 2px solid #2563eb;
+    border-color: #2563eb;
+}
+/* Botón para agregar preguntas */
+#boton-agregar-pregunta {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+#boton-agregar-pregunta:hover {
+    background-color: #2563eb;
+}
+/* Lista de preguntas registradas */
+.lista-preguntas {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+.lista-preguntas h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+/* Tarjeta individual de cada pregunta */
+.pregunta-registrada {
+    background-color: #f8fafc;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+}
+.pregunta-registrada h4 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+.pregunta-registrada p {
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+.pregunta-registrada ul {
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+.pregunta-registrada li {
+    padding: 6px 0;
+    overflow-wrap: anywhere;
+}
+/* Botón para eliminar preguntas */
+.boton-eliminar-pregunta {
+    background-color: #dc2626;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-eliminar-pregunta:hover {
+    background-color: #b91c1c;
+}
